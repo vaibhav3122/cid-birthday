@@ -8,17 +8,18 @@
 
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff5f9e, #b983ff, #6dd5fa);
+      background: linear-gradient(135deg, #ff6b9d, #ff9a9e, #fad0c4, #ffd1ff);
+      overflow: hidden;
       color: white;
       text-align: center;
-      overflow: hidden;
     }
 
     .container {
@@ -27,52 +28,53 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      padding: 25px;
       position: relative;
       z-index: 2;
     }
 
     h1 {
-      font-size: clamp(42px, 8vw, 80px);
-      margin: 10px;
+      font-size: clamp(2.5rem, 10vw, 5rem);
+      margin-bottom: 10px;
       animation: glow 2s infinite alternate;
     }
 
     h2 {
-      font-size: clamp(28px, 5vw, 50px);
-      margin: 10px;
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+      margin-bottom: 15px;
     }
 
     .cake {
-      font-size: 100px;
+      font-size: 90px;
       animation: bounce 1.5s infinite;
     }
 
     .card {
       max-width: 650px;
       padding: 30px;
-      margin-top: 15px;
+      margin-top: 20px;
       border-radius: 25px;
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.4);
+      background: rgba(255, 255, 255, 0.18);
       backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
     }
 
     p {
-      font-size: 20px;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      line-height: 1.7;
     }
 
     button {
-      margin-top: 15px;
+      margin-top: 25px;
       padding: 15px 30px;
       border: none;
       border-radius: 30px;
-      font-size: 18px;
+      font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      color: #d63384;
       background: white;
+      color: #ff4f81;
     }
 
     button:hover {
@@ -81,42 +83,64 @@
 
     #surprise {
       display: none;
-      margin-top: 20px;
-      font-size: 21px;
+      margin-top: 25px;
+      font-size: 1.3rem;
+      animation: fadeIn 1s ease;
     }
 
     .balloon {
       position: fixed;
       bottom: -100px;
-      font-size: 50px;
+      font-size: 55px;
       animation: floatUp linear infinite;
-      z-index: 1;
     }
 
     .b1 { left: 5%; animation-duration: 8s; }
-    .b2 { left: 20%; animation-duration: 10s; }
-    .b3 { left: 40%; animation-duration: 7s; }
-    .b4 { left: 60%; animation-duration: 11s; }
-    .b5 { left: 80%; animation-duration: 9s; }
-    .b6 { left: 92%; animation-duration: 12s; }
+    .b2 { left: 20%; animation-duration: 11s; }
+    .b3 { left: 40%; animation-duration: 9s; }
+    .b4 { left: 60%; animation-duration: 12s; }
+    .b5 { left: 80%; animation-duration: 10s; }
+    .b6 { left: 92%; animation-duration: 7s; }
 
     @keyframes floatUp {
-      from { transform: translateY(0); }
-      to { transform: translateY(-120vh); }
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-120vh) rotate(25deg);
+      }
     }
 
     @keyframes bounce {
-      50% { transform: translateY(-18px); }
+      50% {
+        transform: translateY(-18px);
+      }
     }
 
     @keyframes glow {
-      from { text-shadow: 0 0 10px white; }
-      to { text-shadow: 0 0 30px #ffeb3b; }
+      from {
+        text-shadow: 0 0 10px white;
+      }
+      to {
+        text-shadow: 0 0 30px #ff3b7d;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .footer {
-      margin-top: 20px;
-      font-size: 16px;
+      margin-top: 25px;
+      font-size: 1rem;
     }
   </style>
 </head>
@@ -139,11 +163,13 @@
     <div class="cake">🎂</div>
 
     <div class="card">
+
       <p>
-        Wishing you a day full of happiness,
-        laughter and beautiful memories! ✨
+        Wishing you a beautiful day filled with happiness,
+        laughter and unforgettable memories! ✨
         <br><br>
-        May you always keep smiling and shining. 💕
+        May you always keep smiling and achieve everything
+        you dream of. 💕
       </p>
 
       <button onclick="showSurprise()">
@@ -151,10 +177,12 @@
       </button>
 
       <div id="surprise">
-        🎊 May all your dreams come true! 🎊
+        🎊 May your life always be full of happiness,
+        success and beautiful moments! 🎊
         <br><br>
-        💖 Once again, Happy Birthday Suhani Bhnji! 💖
+        💖 Happy Birthday once again, Suhani Bhnji! 💖
       </div>
+
     </div>
 
     <div class="footer">
