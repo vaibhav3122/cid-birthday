@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday Suhani Bhnji 🎂</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff5f9e, #b983ff, #6dd5fa);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 80px);
+      margin: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    h2 {
+      font-size: clamp(28px, 5vw, 50px);
+      margin: 10px;
+    }
+
+    .cake {
+      font-size: 100px;
+      animation: bounce 1.5s infinite;
+    }
+
+    .card {
+      max-width: 650px;
+      padding: 30px;
+      margin-top: 15px;
+      border-radius: 25px;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+      backdrop-filter: blur(10px);
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 1.6;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #d63384;
+      background: white;
+    }
+
+    button:hover {
+      transform: scale(1.08);
+    }
+
+    #surprise {
+      display: none;
+      margin-top: 20px;
+      font-size: 21px;
+    }
+
+    .balloon {
+      position: fixed;
+      bottom: -100px;
+      font-size: 50px;
+      animation: floatUp linear infinite;
+      z-index: 1;
+    }
+
+    .b1 { left: 5%; animation-duration: 8s; }
+    .b2 { left: 20%; animation-duration: 10s; }
+    .b3 { left: 40%; animation-duration: 7s; }
+    .b4 { left: 60%; animation-duration: 11s; }
+    .b5 { left: 80%; animation-duration: 9s; }
+    .b6 { left: 92%; animation-duration: 12s; }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); }
+      to { transform: translateY(-120vh); }
+    }
+
+    @keyframes bounce {
+      50% { transform: translateY(-18px); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px white; }
+      to { text-shadow: 0 0 30px #ffeb3b; }
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="balloon b1">🎈</div>
+  <div class="balloon b2">🎈</div>
+  <div class="balloon b3">🎈</div>
+  <div class="balloon b4">🎈</div>
+  <div class="balloon b5">🎈</div>
+  <div class="balloon b6">🎈</div>
+
+  <div class="container">
+
+    <h1>🎉 Happy Birthday 🎉</h1>
+
+    <h2>💖 Suhani Bhnji 💖</h2>
+
+    <div class="cake">🎂</div>
+
+    <div class="card">
+      <p>
+        Wishing you a day full of happiness,
+        laughter and beautiful memories! ✨
+        <br><br>
+        May you always keep smiling and shining. 💕
+      </p>
+
+      <button onclick="showSurprise()">
+        Click for a Surprise 🎁
+      </button>
+
+      <div id="surprise">
+        🎊 May all your dreams come true! 🎊
+        <br><br>
+        💖 Once again, Happy Birthday Suhani Bhnji! 💖
+      </div>
+    </div>
+
+    <div class="footer">
+      Made with ❤️ especially for Suhani Bhnji
+    </div>
+
+  </div>
+
+  <script>
+    function showSurprise() {
+      document.getElementById("surprise").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
