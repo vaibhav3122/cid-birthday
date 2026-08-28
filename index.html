@@ -14,116 +14,105 @@
     }
 
     body {
-      min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #ff6b9d, #ff9a9e, #fad0c4, #ffd1ff);
-      overflow: hidden;
-      color: white;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffd1ff);
+      color: #ffffff;
       text-align: center;
+      padding: 30px 15px;
     }
 
     .container {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 25px;
-      position: relative;
-      z-index: 2;
+      max-width: 900px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 25px;
+      padding: 35px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
-      font-size: clamp(2.5rem, 10vw, 5rem);
-      margin-bottom: 10px;
-      animation: glow 2s infinite alternate;
-    }
-
-    h2 {
-      font-size: clamp(1.5rem, 6vw, 2.5rem);
+      font-size: 42px;
       margin-bottom: 15px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     }
 
-    .cake {
-      font-size: 90px;
-      animation: bounce 1.5s infinite;
-    }
-
-    .card {
-      max-width: 650px;
-      padding: 30px;
-      margin-top: 20px;
-      border-radius: 25px;
-      background: rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    p {
-      font-size: 1.2rem;
+    .subtitle {
+      font-size: 20px;
       line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 25px auto;
+      max-width: 700px;
+    }
+
+    .photo-card {
+      overflow: hidden;
+      border-radius: 18px;
+      background: white;
+      padding: 5px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.04);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      border-radius: 14px;
     }
 
     button {
-      margin-top: 25px;
-      padding: 15px 30px;
+      background: #ff4f81;
+      color: white;
       border: none;
+      padding: 15px 30px;
+      font-size: 18px;
       border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: bold;
       cursor: pointer;
-      background: white;
-      color: #ff4f81;
+      margin-top: 20px;
+      box-shadow: 0 5px 15px rgba(255, 79, 129, 0.4);
+      transition: 0.3s;
     }
 
     button:hover {
       transform: scale(1.08);
+      background: #ff2767;
     }
 
     #surprise {
       display: none;
       margin-top: 25px;
-      font-size: 1.3rem;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.2);
       animation: fadeIn 1s ease;
     }
 
-    .balloon {
-      position: fixed;
-      bottom: -100px;
-      font-size: 55px;
-      animation: floatUp linear infinite;
+    #surprise h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
     }
 
-    .b1 { left: 5%; animation-duration: 8s; }
-    .b2 { left: 20%; animation-duration: 11s; }
-    .b3 { left: 40%; animation-duration: 9s; }
-    .b4 { left: 60%; animation-duration: 12s; }
-    .b5 { left: 80%; animation-duration: 10s; }
-    .b6 { left: 92%; animation-duration: 7s; }
-
-    @keyframes floatUp {
-      from {
-        transform: translateY(0);
-      }
-      to {
-        transform: translateY(-120vh) rotate(25deg);
-      }
+    #surprise p {
+      font-size: 19px;
+      line-height: 1.7;
     }
 
-    @keyframes bounce {
-      50% {
-        transform: translateY(-18px);
-      }
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 10px white;
-      }
-      to {
-        text-shadow: 0 0 30px #ff3b7d;
-      }
+    .footer {
+      margin-top: 30px;
+      font-size: 16px;
     }
 
     @keyframes fadeIn {
@@ -138,50 +127,73 @@
       }
     }
 
-    .footer {
-      margin-top: 25px;
-      font-size: 1rem;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 30px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+      }
+
+      .photos {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card img {
+        height: 350px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="balloon b1">🎈</div>
-  <div class="balloon b2">🎈</div>
-  <div class="balloon b3">🎈</div>
-  <div class="balloon b4">🎈</div>
-  <div class="balloon b5">🎈</div>
-  <div class="balloon b6">🎈</div>
-
   <div class="container">
 
-    <h1>🎉 Happy Birthday 🎉</h1>
+    <h1>🎂 Happy Birthday Suhani Bhnji! 🎉</h1>
 
-    <h2>💖 Suhani Bhnji 💖</h2>
+    <p class="subtitle">
+      Wishing you a day full of happiness,<br>
+      laughter and beautiful memories! ✨<br>
+      May you always keep smiling and shining. 💖
+    </p>
 
-    <div class="cake">🎂</div>
+    <!-- PHOTO GALLERY -->
 
-    <div class="card">
+    <div class="photos">
+
+      <div class="photo-card">
+        <img src="photo1.jpeg" alt="Suhani Photo 1">
+      </div>
+
+      <div class="photo-card">
+        <img src="photo2.jpeg" alt="Suhani Photo 2">
+      </div>
+
+      <div class="photo-card">
+        <img src="photo3.jpeg" alt="Suhani Photo 3">
+      </div>
+
+      <div class="photo-card">
+        <img src="photo4.jpeg" alt="Suhani Photo 4">
+      </div>
+
+    </div>
+
+    <button onclick="showSurprise()">
+      Click for a Surprise 🎁
+    </button>
+
+    <div id="surprise">
+
+      <h2>🎉 A Special Wish For You 🎉</h2>
 
       <p>
-        Wishing you a beautiful day filled with happiness,
-        laughter and unforgettable memories! ✨
+        🌸 May all your dreams come true! 🌸
         <br><br>
-        May you always keep smiling and achieve everything
-        you dream of. 💕
+        💖 Once again, Happy Birthday Suhani Bhnji! 💖
       </p>
-
-      <button onclick="showSurprise()">
-        Click for a Surprise 🎁
-      </button>
-
-      <div id="surprise">
-        🎊 May your life always be full of happiness,
-        success and beautiful moments! 🎊
-        <br><br>
-        💖 Happy Birthday once again, Suhani Bhnji! 💖
-      </div>
 
     </div>
 
